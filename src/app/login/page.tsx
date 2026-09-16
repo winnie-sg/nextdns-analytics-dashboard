@@ -1,16 +1,10 @@
 import { Suspense } from "react";
-import { redirect } from "next/navigation";
 import Image from "next/image";
 import { LoginForm } from "@/components/auth/login-form";
-import { isAuthEnabled } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
 export default function LoginPage() {
-  if (!isAuthEnabled()) {
-    redirect("/");
-  }
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm">

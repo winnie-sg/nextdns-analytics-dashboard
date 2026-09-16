@@ -1,20 +1,18 @@
 services:
   app:
-    build: .
-    container_name: ndns-analytics
+    image: ghcr.io/winnie-sg/nextdns-analytics-dashboard:latest
+    container_name: next-dashboard
+    hostname: next-dashboard
     restart: unless-stopped
     ports:
       - "3000:3000"
     env_file:
       - .env
     volumes:
-      - ndns-data:/app/data
+      - ./next-dashboard/data:/app/data
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 30s
-
-volumes:
-  ndns-data:

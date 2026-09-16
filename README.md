@@ -34,7 +34,7 @@ This fork uses **SQLite** instead of PostgreSQL. The database is a single persis
 ### 1. Clone your fork
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/nextdns-analytics-dashboard.git
+git clone https://github.com/winnie-sg/nextdns-analytics-dashboard.git
 cd nextdns-analytics-dashboard
 cp .env.example .env
 ```
@@ -111,7 +111,7 @@ Your actual Docker volume prefix may differ if the Compose project name differs.
 **Requirements:** Bun 1.x or newer. No PostgreSQL server is required.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/nextdns-analytics-dashboard.git
+git clone https://github.com/winnie-sg/nextdns-analytics-dashboard.git
 cd nextdns-analytics-dashboard
 bun install
 cp .env.example .env

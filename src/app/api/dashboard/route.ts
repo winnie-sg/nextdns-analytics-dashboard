@@ -177,7 +177,7 @@ export async function GET(request: Request) {
 
     const timezoneModifier = getSqliteTimezoneModifier(
       tz,
-      new Date(currentWindowStart.getTime() + currentWindowMs / 2)
+      new Date(new Date(currentStart).getTime() + currentWindowMs / 2)
     );
 
     const bucketExpression =

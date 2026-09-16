@@ -158,6 +158,7 @@ For chart bucketing, the app resolves the selected IANA time zone (for example `
 | `ENCRYPTION_KEY` | — | 64-character hex key used to encrypt stored API keys |
 | `DATABASE_PATH` | `./data/nextdns.sqlite` | SQLite database file path; Docker uses `/app/data/nextdns.sqlite` |
 | `PORT` | `3000` | Server port |
+| `NEXT_TELEMETRY_DISABLED` | `1` | Disables Next.js anonymous telemetry |
 | `POLL_INTERVAL_SECONDS` | `30` | DNS log polling interval |
 | `RETENTION_DAYS` | `90` | Log retention in days; `0` means forever |
 | `ENABLE_HISTORY_FETCH` | `0` | Bootstrap seven days of history on first run when set to `1` |
@@ -165,6 +166,10 @@ For chart bucketing, the app resolves the selected IANA time zone (for example `
 | `VOLUME_SPIKE_THRESHOLD` | `200` | Queries per five-minute window used for volume alerts |
 | `LOG_LEVEL` | `info` | `trace`, `debug`, `info`, `warn`, `error`, or `fatal` |
 | `LOG_MODE` | `pretty` | `pretty` or `json` |
+
+## Next.js telemetry
+
+This fork opts out of Next.js anonymous telemetry by default. `NEXT_TELEMETRY_DISABLED=1` is set in the Docker build and runtime stages, and it is included in `.env.example` for local development.
 
 ## Authentication
 

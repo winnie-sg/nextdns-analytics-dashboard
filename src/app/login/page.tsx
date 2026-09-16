@@ -4,6 +4,8 @@ import Image from "next/image";
 import { LoginForm } from "@/components/auth/login-form";
 import { isAuthEnabled } from "@/lib/auth";
 
+export const dynamic = "force-dynamic";
+
 export default function LoginPage() {
   if (!isAuthEnabled()) {
     redirect("/");

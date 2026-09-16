@@ -36,7 +36,6 @@
       },
       "devDependencies": {
         "@tailwindcss/postcss": "^4",
-        "@types/eventsource": "^3.0.0",
         "@types/node": "^20",
         "@types/node-cron": "^3.0.11",
         "@types/react": "^19",
@@ -438,7 +437,6 @@
 
     "@types/estree": ["@types/estree@1.0.8", "", {}, "sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w=="],
 
-    "@types/eventsource": ["@types/eventsource@3.0.0", "", { "dependencies": { "eventsource": "*" } }, "sha512-yEhFj31FTD29DtNeqePu+A+lD6loRef6YOM5XfN1kUwBHyy2DySGlA3jJU+FbQSkrfmlBVluf2Dub/OyReFGKA=="],
 
     "@types/json-schema": ["@types/json-schema@7.0.15", "", {}, "sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA=="],
 

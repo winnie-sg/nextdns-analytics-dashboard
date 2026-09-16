@@ -43,7 +43,6 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/eventsource": "^3.0.0",
     "@types/node": "^20",
     "@types/node-cron": "^3.0.11",
     "@types/react": "^19",

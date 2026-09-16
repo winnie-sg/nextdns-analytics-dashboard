@@ -1,0 +1,39 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: docker/github-builder/.github/workflows/build.yml@v1
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
+    with:
+      output: image
+      push: ${{ github.event_name == 'push' }}
+      platforms: linux/amd64,linux/arm64
+      cache: true
+      cache-mode: max
+      set-meta-labels: true
+      meta-images: ghcr.io/${{ github.repository }}
+      meta-tags: |
+        type=ref,event=branch
+        type=sha,prefix=
+        type=raw,value=latest,enable={{is_default_branch}}
+      labels: |
+        org.opencontainers.image.title=NDNS Analytics Dashboard
+        org.opencontainers.image.description=Self-hosted DNS monitoring for NextDNS
+        org.opencontainers.image.vendor=${{ github.repository_owner }}
+    secrets:
+      registry-auths: |
+        - registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
